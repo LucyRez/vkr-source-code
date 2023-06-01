@@ -5,7 +5,9 @@
 
 # Структура репозитория
 
-- container: содержит файлы сборки контейнера для запуска проекта
+**Примечание:** Файлы для GitHub оказались слишком большими, поэтому папка container вынесена на Google Drive: https://drive.google.com/drive/folders/1afe64Vo5MY2Zn1TURPRyF2uBBjFlKLOZ?usp=sharing  
+
+- container: содержит файлы сборки контейнера для запуска проекта  
 - sklif-security-management: содержит исходный код сервиса авторизации
 - sklif-organization-management: содержит исходный код сервиса управления организациями
 - sklif-scans-provider: содержит исходный код сервиса для взаимодействия с S3-хранилищем
