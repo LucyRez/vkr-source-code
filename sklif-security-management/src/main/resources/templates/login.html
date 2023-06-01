@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Sklif Admin Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+    <style>
+        *,
+        ::after,
+        ::before{box-sizing:border-box}
+        body{font-family:"PT Sans",sans-serif;--stroke-color:#E2E8F0;--primary-color:#3C50E0}
+        input{all:unset;display:inline-block}
+        .login-page{margin:100px auto;width:400px}
+        .login-page>div{margin-top:32px;padding:20px}
+        .card{background-color:#fff;border:1px solid var(--stroke-color);box-shadow:1px 2px 3px var(--stroke-color)}
+        .field-name{font-weight:800;font-size:15px}
+        .outline-input{border-radius:5px;border:1.5px solid var(--stroke-color);padding:15px 25px}
+        .outline-input:focus{border-color:var(--primary-color)}
+        .outline-input::placeholder{font-size:14px}
+        .filled-button{background-color:var(--primary-color);color:#fff;border:0;border-radius:5px;padding:14px 40px;text-align:center;cursor:pointer}
+        form>div{display:flex;flex-flow:column;align-items:stretch;overflow:hidden}
+        form>div>input[type=submit]{margin-top:20px}
+        .alert {
+            padding: 15px;
+            margin-bottom: 8px;
+            border: 1px solid transparent;
+            border-radius: 4px;
+        }
+        .alert-danger {
+            color: #721c24;
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+        }
+
+    </style>
+</head>
+<body>
+<div id="root">
+    <div class="login-page">
+        <h1>Вход</h1>
+        <div class="card">
+            <p th:if="${loginError}" class="error"></p>
+            <form th:action="@{/login}" method="post">
+                <div th:if="${param.error}">
+                    <div class="alert alert-danger">
+                        Неверный логин или пароль
+                    </div>
+                </div>
+                <div>
+                    <p class="field-name">Почта</p>
+                    <input name="username" type="email" class="outline-input">
+                </div>
+                <div>
+                    <p class="field-name">Пароль</p>
+                    <input name="password" type="password" class="outline-input">
+                </div>
+                <div>
+                    <input type="submit" class="filled-button" value="Войти">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
